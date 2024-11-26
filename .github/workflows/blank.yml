@@ -13,10 +13,10 @@ jobs:
       run: cmd /c curl ipinfo.io
   
     - name: TIME ZONE123 
-      run: $timezone = (Invoke-RestMethod -Uri "https://ipinfo.io/json").timezone; switch ($timezone) { "America/Los_Angeles" { $timezone = "US Mountain Standard Time" } "America/New_York" { $timezone = "Paraguay Standard Time" } default { $timezone = "okjaanu" } }; tzutil /s "$timezone"; Write-Output "Time zone changed to $timezone"
+      run: $timezone = (Invoke-RestMethod -Uri "https://ipinfo.io/json").timezone; switch ($timezone) { "America/Los_Angeles" { $timezone = "US Mountain Standard Time" } "America/New_York" { $timezone = "Paraguay Standard Time" } default { $timezone = "Paraguay Standard Time" } }; tzutil /s "$timezone"; Write-Output "Time zone changed to $timezone"
  
     - name: Download
-      run: Invoke-WebRequest https://github.com/mohani9887/API1/releases/download/1/youtube.zip -OutFile youtube.zip
+      run: Invoke-WebRequest https://github.com/mohani9887/API2/releases/download/2/youtube.zip -OutFile youtube.zip
 
     - name: Extract
       run: Expand-Archive youtube.zip -DestinationPath "C:\Users\Public\Desktop"
